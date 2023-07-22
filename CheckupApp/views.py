@@ -5,10 +5,10 @@ from django.http import HttpResponse
 import psutil
 import requests
 import time
-from .models import ServerInfo
+from .models import ServerInfo,ServerCheckResult
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .serializers import ServerInfoSerializer
+from .serializers import ServerInfoSerializer,ServerCheckResultSerializer
 from rest_framework import status
 from django.http import JsonResponse
 
@@ -17,8 +17,8 @@ from django.http import JsonResponse
 
 @api_view(['GET'])
 def server_info_list(request):
-    data = ServerInfo.objects.all()
-    serializer = ServerInfoSerializer(data, many=True)
+    server_info_instances = ServerCheckResult.objects.all()
+    serializer = ServerCheckResultSerializer(server_info_instances, many=True)  # Use many=True for a queryset
     return Response(serializer.data)
 @api_view(['POST'])
 def create_server_info(request):
@@ -109,59 +109,20 @@ def ssh_health_check(request):
 
 #server up down and response time 
 
-def check_server_health(server_url):
-    try:
-        # Make a GET request to the server
-        response = requests.get(server_url)
-
-        # Check if the server is up (status code 200-299 indicates success)
-        server_up = response.status_code >= 200 and response.status_code < 300
-
-        # Consider the server as down if it returns a 404 (Not Found) error
-        if response.status_code == 404:
-            server_up = False
-
-        # Calculate the response time
-        response_time_ms = response.elapsed.total_seconds() * 1000
-
-        return server_up, response_time_ms
-    except requests.exceptions.RequestException as e:
-        # If there is an error in making the request, consider the server as down
-        print("Error checking server health:", e)
-        return False, None
 
 #server up down checking 
 @api_view(['GET'])
 def server_up_down_check(request):
-    server_info_list = []
-
-    data = ServerInfo.objects.all()
-    for server_info in data:
-        server_up, response_time = check_server_health(server_info.url_address)
-        server_info_dict = {
-            "server_name": server_info.server_name,
-            "ip_address": str(server_info.ip_address),
-            "url_address": server_info.url_address,
-            "server_up": server_up,
-            "response_time_ms": f"{response_time} ms",
-        }
-        server_info_list.append(server_info_dict)
-    return JsonResponse(server_info_list, safe=False)
+    server_info_instance = ServerInfo.objects.get(id=1)  # Replace 1 with the appropriate ID of the ServerInfo instance you want to use
+    result = ServerCheckResult.objects.create(
+        server_id=server_info_instance,
+        response_time="33",
+        # server_status=True,
+        status_code=23,
+    )
+    return JsonResponse("lkj", safe=False)
 
                 
 def index(request):
-    
-    data=ServerInfo.objects.all()
-    for dd in data:
-        server_up, response_time = check_server_health(dd.url_address)
-        if server_up:
-            print("Server is up!")
-        else:
-            print("Server is down!")
-
-        if response_time is not None:
-            print(f"Response time: {response_time:.2f} ms")
-        
-        
     return ssh_health_check(request)
  
