@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remote Server Health Check</title>
+</head>
+<body>
+    <h1>Remote Server Health Check Results</h1>
+    <pre>
+        {% for command, output in results.items %}
+            Command: {{ command }}
+            {{ output }}
+            ----------------------------------------------
+        {% endfor %}
+    </pre>
+</body>
+</html>
