@@ -1174,3 +1174,1038 @@ Traceback (most recent call last):
   File "/usr/lib64/python3.11/json/encoder.py", line 180, in default
     raise TypeError(f'Object of type {o.__class__.__name__} '
 TypeError: Object of type ListSerializer is not JSON serializable
+ERROR 2023-07-23 05:58:04,406 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 129, in server_up_down_check
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'data'
+ERROR 2023-07-23 06:00:48,860 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 129, in server_up_down_check
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'data'
+ERROR 2023-07-23 06:00:54,133 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 129, in server_up_down_check
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'data'
+ERROR 2023-07-23 06:08:21,518 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 130, in server_up_down_check
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 1124, in get_field_names
+    assert not (fields is None and exclude is None), (
+                                   ^^^^^^^^^^^^^^^
+AssertionError: ("Creating a ModelSerializer without either the 'fields' attribute or the 'exclude' attribute has been deprecated since 3.3.0, and is now disallowed. Add an explicit fields = '__all__' to the ServerInfoSerializer serializer.",)
+ERROR 2023-07-23 06:28:15,346 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 130, in server_up_down_check
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/serializers.py", line 20, in to_representation
+    last_10_results = instance.servercheckresult_set.all().order_by('-id')[:10]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ServerCheckResult' object has no attribute 'servercheckresult_set'
+ERROR 2023-07-23 06:30:14,290 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 130, in server_up_down_check
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+TypeError: 'ServerInfo' object is not iterable
+ERROR 2023-07-23 06:30:53,697 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 130, in server_up_down_check
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 1106, in get_field_names
+    raise TypeError(
+TypeError: The `fields` option must be a list or tuple or "__all__". Got str.
+ERROR 2023-07-23 06:31:15,006 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 130, in server_up_down_check
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `__all__` is not valid for model `ServerCheckResult`.
+ERROR 2023-07-23 06:31:49,890 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 130, in server_up_down_check
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `server_name` is not valid for model `ServerCheckResult`.
+ERROR 2023-07-23 06:37:16,980 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 130, in server_up_down_check
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+TypeError: 'ServerInfo' object is not iterable
+ERROR 2023-07-23 06:38:56,578 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 130, in server_up_down_check
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+           ^
+TypeError: 'ServerInfo' object is not iterable
+ERROR 2023-07-23 06:51:21,366 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 131, in server_up_down_check
+    auht=ServerCheckResult.objects.get(id=13)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+CheckupApp.models.ServerCheckResult.DoesNotExist: ServerCheckResult matching query does not exist.
+ERROR 2023-07-23 06:52:17,032 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 130, in server_up_down_check
+    auth = ServerCheckResult.objects.get(id=13)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+CheckupApp.models.ServerCheckResult.DoesNotExist: ServerCheckResult matching query does not exist.
+ERROR 2023-07-23 06:53:19,461 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 131, in server_up_down_check
+    return JsonResponse({'data': auth})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/http/response.py", line 731, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib64/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ServerCheckResult is not JSON serializable
+ERROR 2023-07-23 06:53:59,341 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 131, in server_up_down_check
+    data = list(auth.values())
+                ^^^^^^^^^^^
+AttributeError: 'ServerCheckResult' object has no attribute 'values'
+ERROR 2023-07-23 06:57:34,211 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 131, in server_up_down_check
+    books_by_author = auth.server_infoes.all()
+                      ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ServerCheckResult' object has no attribute 'server_infoes'
+ERROR 2023-07-23 06:58:13,890 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 131, in server_up_down_check
+    books_by_author = auth.server_id.all()
+                      ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ServerInfo' object has no attribute 'all'
+ERROR 2023-07-23 06:59:33,606 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 135, in server_up_down_check
+    'other_field': server_info_instance.other_field,  # Add other fields as needed
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ServerInfo' object has no attribute 'other_field'
+ERROR 2023-07-23 06:59:56,304 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 135, in server_up_down_check
+    'other_field': server_info_instance.response_time,  # Add other fields as needed
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ServerInfo' object has no attribute 'response_time'
+ERROR 2023-07-23 07:14:59,870 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 133, in server_up_down_check
+    server_id=OuterRef('server_id')
+              ^^^^^^^^
+NameError: name 'OuterRef' is not defined
+ERROR 2023-07-23 07:15:43,376 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 146, in server_up_down_check
+    for result in queryset:
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/sql/compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/sql/compiler.py", line 764, in as_sql
+    self.compile(self.where) if self.where is not None else ("", [])
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/sql/compiler.py", line 546, in compile
+    sql, params = node.as_sql(self, self.connection)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/sql/where.py", line 145, in as_sql
+    sql, params = compiler.compile(child)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/sql/compiler.py", line 546, in compile
+    sql, params = node.as_sql(self, self.connection)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/lookups.py", line 357, in as_sql
+    return super().as_sql(compiler, connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/lookups.py", line 225, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/lookups.py", line 118, in process_rhs
+    sql, params = compiler.compile(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/sql/compiler.py", line 546, in compile
+    sql, params = node.as_sql(self, self.connection)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/db/models/expressions.py", line 855, in as_sql
+    raise ValueError(
+ValueError: This queryset contains a reference to an outer query and may only be used in a subquery.
+ERROR 2023-07-23 07:21:04,606 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 153, in server_up_down_check
+    server_info_instance = result.server_id.first()  # Access the related ServerInfo instance directly
+                           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ServerInfo' object has no attribute 'first'
+ERROR 2023-07-23 07:21:56,161 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 153, in server_up_down_check
+    server_info_instance = result.server_info[0] if result.server_info else None
+                           ~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'ServerInfo' object is not subscriptable
+ERROR 2023-07-23 07:23:00,272 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 153, in server_up_down_check
+    server_info_instance = result.server_id.first() if result.server_id.exists() else None
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ServerInfo' object has no attribute 'exists'
+ERROR 2023-07-23 07:24:24,062 log log.py 241 log_response Internal Server Error: /cronjob/api/server_up_down_check
+Traceback (most recent call last):
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/myenv/lib64/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/serverHealthCheck/CheckupApp/views.py", line 159, in server_up_down_check
+    'server_status': result.server_status,
+                     ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ServerCheckResult' object has no attribute 'server_status'

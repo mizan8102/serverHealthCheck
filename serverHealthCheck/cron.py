@@ -46,8 +46,8 @@ def my_function():
 @shared_task
 def delete_old_data():
     # Calculate the date threshold for keeping the last 10 data entries
-    threshold_date = timezone.now() - timedelta(days=10)
+    # threshold_date = timezone.now() - timedelta(days=10)
 
-    # Delete data older than the threshold date
-    ServerCheckResult.objects.filter(timestamp__lt=threshold_date).delete()
+    # # Delete data older than the threshold date
+    # ServerCheckResult.objects.filter(timestamp__lt=threshold_date).delete()
     logger2.info("delete successfull")

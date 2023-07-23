@@ -8,13 +8,15 @@ import time
 from .models import ServerInfo,ServerCheckResult
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .serializers import ServerInfoSerializer,ServerCheckResultSerializer
+from .serializers import ServerInfoSerializer,ServerCheckResultSerializer,CureentServerSerializer
 from rest_framework import status
-from django.http import JsonResponse
 from django.http import JsonResponse
 from celery import shared_task
 from datetime import timedelta
 from django.utils import timezone
+from django.db.models import Max
+from django.db.models import OuterRef, Subquery, Prefetch
+
 # Create your views here.
 
 
@@ -122,9 +124,47 @@ def ssh_health_check(request):
 #server up down checking 
 @api_view(['GET'])
 def server_up_down_check(request):
-    server_info_instances = ServerCheckResult.objects.all().order_by('-id')[:10]
-    serializer = ServerCheckResultSerializer(server_info_instances, many=True)  # Use many=True for a queryset
-    return Response(serializer.data)
+    # server_info_instances = ServerCheckResult.objects.all().order_by('-id')[:10]
+    # serializer = ServerCheckResultSerializer(server_info_instances, many=True)  # Use many=True for a queryset
+    
+    # data = ServerCheckResult.objects.all().order_by('-id')[:10]
+    # serializer = CureentServerSerializer(data, many=True)
+    # return Response(serializer.data)
+    try:
+        # Subquery to get the latest 'created_at' for each server_id
+        latest_created_at = ServerCheckResult.objects.filter(
+            server_id=OuterRef('server_id')
+        ).values('server_id').annotate(max_created_at=Max('created_at')).values('max_created_at')
+
+        # Query to fetch the latest ServerCheckResult for each server_id
+        latest_results = ServerCheckResult.objects.filter(
+            created_at__in=Subquery(latest_created_at)
+        )
+
+        # Prefetch the related ServerInfo instances for the latest ServerCheckResult
+        queryset = ServerCheckResult.objects.filter(
+            id__in=Subquery(latest_results.values('id'))
+        ).prefetch_related(
+            Prefetch('server_id', queryset=ServerInfo.objects.all(), to_attr='server_info')
+        )
+
+        data_list = []
+        for result in queryset:
+            server_info_instance = result.server_id.server_info[0] if hasattr(result.server_id, 'server_info') else None
+
+            # Prepare the data from the related ServerInfo model for each ServerCheckResult instance
+            data = {
+                'server_id': result.server_id.id,
+                'server_name': result.server_id.server_name if result.server_id else None,
+                # 'server_status': result.server_status,
+                'response_time': result.response_time,
+                # Add other fields as needed from the ServerCheckResult model or related ServerInfo model
+            }
+            data_list.append(data)
+
+        return JsonResponse({'data': data_list})
+    except ServerCheckResult.DoesNotExist:
+        return JsonResponse({'error': 'No ServerCheckResults found'}, status=404)
    
 def index(request):
     return ssh_health_check(request)
