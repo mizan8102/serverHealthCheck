@@ -11,15 +11,24 @@ from rest_framework.decorators import api_view
 from .serializers import ServerInfoSerializer,ServerCheckResultSerializer
 from rest_framework import status
 from django.http import JsonResponse
-
+from django.http import JsonResponse
+from celery import shared_task
+from datetime import timedelta
+from django.utils import timezone
 # Create your views here.
 
 
 @api_view(['GET'])
 def server_info_list(request):
-    server_info_instances = ServerCheckResult.objects.all()
-    serializer = ServerCheckResultSerializer(server_info_instances, many=True)  # Use many=True for a queryset
-    return Response(serializer.data)
+    server_info = ServerInfo.objects.all()
+    # serializer = ServerInfoSerializer(server_info, many=True)  # Use many=True for a queryset
+    data = list(server_info.values())  # Convert the queryset to a list of dictionaries
+    response_data = {
+            'status': 'success',
+            'data': data,
+        }
+    return JsonResponse(response_data)
+
 @api_view(['POST'])
 def create_server_info(request):
     serializer=ServerInfoSerializer(data=request.data)
@@ -113,16 +122,10 @@ def ssh_health_check(request):
 #server up down checking 
 @api_view(['GET'])
 def server_up_down_check(request):
-    server_info_instance = ServerInfo.objects.get(id=1)  # Replace 1 with the appropriate ID of the ServerInfo instance you want to use
-    result = ServerCheckResult.objects.create(
-        server_id=server_info_instance,
-        response_time="33",
-        # server_status=True,
-        status_code=23,
-    )
-    return JsonResponse("lkj", safe=False)
-
-                
+    server_info_instances = ServerCheckResult.objects.all().order_by('-id')[:10]
+    serializer = ServerCheckResultSerializer(server_info_instances, many=True)  # Use many=True for a queryset
+    return Response(serializer.data)
+   
 def index(request):
     return ssh_health_check(request)
  

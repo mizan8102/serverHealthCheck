@@ -1,5 +1,8 @@
 import logging
 from CheckupApp.models import ServerCheckResult,ServerInfo
+from celery import shared_task
+from datetime import timedelta
+from django.utils import timezone
 import requests
 
 logger = logging.getLogger(__name__)
@@ -37,3 +40,14 @@ def my_function():
             logger2.info(f"hello world {response_time_ms}")
         except Exception as e:
             logger2.error(f"error {e}")
+
+
+
+@shared_task
+def delete_old_data():
+    # Calculate the date threshold for keeping the last 10 data entries
+    threshold_date = timezone.now() - timedelta(days=10)
+
+    # Delete data older than the threshold date
+    ServerCheckResult.objects.filter(timestamp__lt=threshold_date).delete()
+    logger2.info("delete successfull")

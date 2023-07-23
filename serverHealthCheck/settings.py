@@ -212,5 +212,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRONJOBS = [
     ('*/1 * * * *', 'serverHealthCheck.cron.my_function'),
-    # ('*/1 * * * *', 'serverHealthCheck.cron.my_function'),
+    ('*/1 * * * *', 'serverHealthCheck.cron.delete_old_data'),
 ]
