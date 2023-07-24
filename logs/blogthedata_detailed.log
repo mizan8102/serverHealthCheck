@@ -4148,3 +4148,6 @@ INFO 2023-07-23 11:20:02,058 MainThread 139744106530432 cron cron.py 40 django m
 INFO 2023-07-23 11:21:02,043 MainThread 139969000846976 cron cron.py 53 django delete_old_data 474461 delete successfull
 INFO 2023-07-23 11:21:02,054 MainThread 140072003761792 cron cron.py 40 django my_function 474460 hello world 1.926
 INFO 2023-07-23 11:21:02,063 MainThread 140072003761792 cron cron.py 40 django my_function 474460 hello world 4.039
+INFO 2023-07-23 11:22:02,176 MainThread 139968096331392 cron cron.py 53 django delete_old_data 474900 delete successfull
+INFO 2023-07-23 11:22:02,364 MainThread 140476268734080 cron cron.py 40 django my_function 474905 hello world 1.91
+INFO 2023-07-23 11:22:02,373 MainThread 140476268734080 cron cron.py 40 django my_function 474905 hello world 4.2059999999999995
