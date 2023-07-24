@@ -27,8 +27,23 @@ class ServerInfoSerializer(serializers.ModelSerializer):
         return data
     
 class CureentServerSerializer(serializers.ModelSerializer):
-    server_id = ServerInfoSerializer(many=True, read_only=True)  # Use many=True for related objects
-    
+    servercheckresult_set = ServerCheckResultSerializer(many=True, read_only=True)  # Use many=True for related objects
+
+    class Meta:
+        model = ServerInfo
+        fields = ['server_name', 'servercheckresult_set']  # Remove 'response_time' as it's part of ServerCheckResult
+
+class CurrentServerSerializer(serializers.ModelSerializer):
     class Meta:
         model = ServerCheckResult
-        fields = ['response_time', 'server_id']
+        fields = '__all__'
+    # def to_representation(self, instance):
+    #     # Get the last 10 ServerCheckResult instances related to the ServerInfo instance
+    #     last_10_results = instance.servercheckresult_set.all().order_by('-id')[:10]
+    #     # Serialize the last 10 ServerCheckResult instances
+    #     last_10_results_data = ServerCheckResultSerializer(last_10_results, many=True).data
+    #     # Get the default serialized representation of the ServerInfo instance
+    #     data = super().to_representation(instance)
+    #     # Include the serialized last 10 ServerCheckResult instances in the data
+    #     data['servercheckresult_set'] = last_10_results_data
+    #     return data

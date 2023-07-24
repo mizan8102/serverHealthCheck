@@ -5,10 +5,13 @@ from django.http import HttpResponse
 import psutil
 import requests
 import time
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 from .models import ServerInfo,ServerCheckResult
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .serializers import ServerInfoSerializer,ServerCheckResultSerializer,CureentServerSerializer
+from .serializers import ServerInfoSerializer,ServerCheckResultSerializer,CureentServerSerializer, CurrentServerSerializer
 from rest_framework import status
 from django.http import JsonResponse
 from celery import shared_task
@@ -18,6 +21,51 @@ from django.db.models import Max
 from django.db.models import OuterRef, Subquery, Prefetch
 
 # Create your views here.
+class SSHHealthCheckAPI(APIView):
+    def get(self, request):
+        hostname = "188.166.242.10"
+        username = "root"
+        password = "zit.CKL@+[2023]SVR"
+
+        try:
+            # Establish an SSH connection
+            ssh_client = paramiko.SSHClient()
+            ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            ssh_client.connect(hostname, username=username, password=password)
+
+            # Commands to check server health
+            commands = [
+                "uptime",
+                "df -h",
+                "free -h",
+                "ping -c 4 google.com",
+                "netstat -tuln",
+                "tail /var/log/syslog",
+                "tail /var/log/auth.log",
+                "top -bn1",
+            ]
+
+            health_check_results = {}
+
+            for command in commands:
+                stdin, stdout, stderr = ssh_client.exec_command(command)
+                output = stdout.read().decode("utf-8")
+                health_check_results[command] = output
+
+            # Close the SSH connection
+            ssh_client.close()
+
+            # Return the health check results as JSON response
+            return Response({"results": health_check_results}, status=status.HTTP_200_OK)
+
+        except paramiko.AuthenticationException:
+            return Response("Authentication failed. Please check your credentials.", status=status.HTTP_401_UNAUTHORIZED)
+        except paramiko.SSHException as e:
+            return Response(f"SSH error: {e}", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        except paramiko.BadHostKeyException as e:
+            return Response(f"Host key could not be verified: {e}", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        except Exception as e:
+            return Response(f"Error: {e}", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(['GET'])
@@ -118,53 +166,60 @@ def ssh_health_check(request):
     except Exception as e:
         return HttpResponse(f"Error: {e}")
 
-#server up down and response time 
+
+def server_up_down_check_histories():
+    server_check_results = ServerCheckResult.objects.select_related('server_id').order_by('-id')[:20]
+    serialized_data = []
+    for result in server_check_results:
+        serialized_result = {
+            'id': result.id,
+            'response_time': result.response_time,
+            'status_code': result.status_code,
+            'created_at': result.created_at,
+            'updated_at': result.updated_at,
+            'server_name': result.server_id.server_name,
+            'ip_address' : result.server_id.ip_address,
+            'url_address' :result.server_id.url_address
+        }
+
+        # Append the serialized data to the list
+        serialized_data.append(serialized_result)
+    return serialized_data
 
 
-#server up down checking 
+
 @api_view(['GET'])
 def server_up_down_check(request):
-    # server_info_instances = ServerCheckResult.objects.all().order_by('-id')[:10]
-    # serializer = ServerCheckResultSerializer(server_info_instances, many=True)  # Use many=True for a queryset
-    
-    # data = ServerCheckResult.objects.all().order_by('-id')[:10]
-    # serializer = CureentServerSerializer(data, many=True)
-    # return Response(serializer.data)
     try:
-        # Subquery to get the latest 'created_at' for each server_id
         latest_created_at = ServerCheckResult.objects.filter(
             server_id=OuterRef('server_id')
         ).values('server_id').annotate(max_created_at=Max('created_at')).values('max_created_at')
-
-        # Query to fetch the latest ServerCheckResult for each server_id
         latest_results = ServerCheckResult.objects.filter(
             created_at__in=Subquery(latest_created_at)
         )
-
-        # Prefetch the related ServerInfo instances for the latest ServerCheckResult
         queryset = ServerCheckResult.objects.filter(
             id__in=Subquery(latest_results.values('id'))
         ).prefetch_related(
             Prefetch('server_id', queryset=ServerInfo.objects.all(), to_attr='server_info')
         )
-
         data_list = []
         for result in queryset:
             server_info_instance = result.server_id.server_info[0] if hasattr(result.server_id, 'server_info') else None
-
-            # Prepare the data from the related ServerInfo model for each ServerCheckResult instance
             data = {
                 'server_id': result.server_id.id,
                 'server_name': result.server_id.server_name if result.server_id else None,
-                # 'server_status': result.server_status,
+                'ip_address': result.server_id.ip_address,
+                'url_address': result.server_id.url_address,
                 'response_time': result.response_time,
-                # Add other fields as needed from the ServerCheckResult model or related ServerInfo model
+                'status_code': result.status_code,
+                'created_at':result.created_at
             }
             data_list.append(data)
 
-        return JsonResponse({'data': data_list})
+        return JsonResponse({'data': data_list,'data_his':server_up_down_check_histories()})
     except ServerCheckResult.DoesNotExist:
         return JsonResponse({'error': 'No ServerCheckResults found'}, status=404)
+   
    
 def index(request):
     return ssh_health_check(request)

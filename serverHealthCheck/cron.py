@@ -37,6 +37,12 @@ def my_function():
                 # server_status=server_status,
                 status_code=server_up,
             )
+            if result.status_code==404:
+                # api_url = f'https://api.sms.net.bd/sendsms?api_key=s62eks4AGUNiSXePhXd6h6yFJFox9p3DbFwpsw9k&msg={server_info.url_address} server is down&to=01645316379'
+                try:
+                    response = requests.get(api_url)
+                except requests.exceptions.RequestException as e:
+                    logger2.error(f"error {e}")
             logger2.info(f"hello world {response_time_ms}")
         except Exception as e:
             logger2.error(f"error {e}")
