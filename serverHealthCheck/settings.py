@@ -24,8 +24,7 @@ SECRET_KEY = 'django-insecure-sro*cc-=wd4(f6=mec^f(*c2kk&whl$sx@dsg%034g#y98hm=y
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['159.223.67.50']
 
 
 # Application definition
@@ -235,15 +234,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
+import os
 STATIC_URL = 'static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRONJOBS = [
-    ('*/1 * * * *', 'serverHealthCheck.cron.my_function'),
+    # ('*/1 * * * *', 'serverHealthCheck.cron.my_function'),
     ('*/1 * * * *', 'serverHealthCheck.cron.delete_old_data'),
 ]

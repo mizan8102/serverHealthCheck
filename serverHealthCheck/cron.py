@@ -4,6 +4,8 @@ from celery import shared_task
 from datetime import timedelta
 from django.utils import timezone
 import requests
+from getmac import get_mac_address as gma
+
 
 logger = logging.getLogger(__name__)
 logger2 = logging.getLogger('django')
@@ -56,4 +58,6 @@ def delete_old_data():
 
     # # Delete data older than the threshold date
     # ServerCheckResult.objects.filter(timestamp__lt=threshold_date).delete()
-    logger2.info("delete successfull")
+    original_string = gma()
+    # modified_string = original_string.replace(":", "-")
+    logger2.info("MAC ADDRESS = "+gma())
