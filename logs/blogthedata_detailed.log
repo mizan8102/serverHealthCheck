@@ -13,3 +13,4 @@ ERROR 2023-08-04 18:21:02,332 MainThread 139969681020544 cron cron.py 50 django 
 INFO 2023-08-04 18:22:02,284 MainThread 140545834202752 cron cron.py 63 django delete_old_data 89100 MAC ADDRESS = fa:40:0a:d2:54:4b
 INFO 2023-08-04 18:22:02,371 MainThread 140270813423232 cron cron.py 48 django my_function 89099 hello world 1.699
 ERROR 2023-08-04 18:22:02,380 MainThread 140270813423232 cron cron.py 50 django my_function 89099 error name 'api_url' is not defined
+INFO 2023-08-04 18:23:02,352 MainThread 140311985870464 cron cron.py 63 django delete_old_data 89287 MAC ADDRESS = fa:40:0a:d2:54:4b
